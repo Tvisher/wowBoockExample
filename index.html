@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./wow_book.css">
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <div id="book">
+        <div>
+            <img class="photo" src="./example_page-0001.jpg" alt="">
+        </div>
+        <div>
+            <img class="photo" src="./example_page-0002.jpg" alt="">
+        </div>
+        <div>
+            <img class="photo" src="./example_page-0003.jpg" alt="">
+        </div>
+        <div>
+            <img class="photo" src="./example_page-0004.jpg" alt="">
+        </div>
+        <div>
+            <img class="photo" src="./example_page-0005.jpg" alt="">
+        </div>
+
+    </div>
+    <style>
+        .photo {
+            will-change: transform;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="./wow_book.min.js"></script>
+    <script>
+
+        $(function () {
+            var bookOptions = {
+                centeredWhenClosed: true //если true, книга будет центрирована при закрытии (показывая первую или последнюю обложку).
+                , hardcovers: false //если true, книга будет в твердом переплете.
+                , pageNumbers: false //Если true, включается автоматическая нумерация страниц.
+                , toolbar: "toc, back, next, first, last, slideshow, zoomin, zoomout,  fullscreen, thumbnails" // элементы управления книгой
+                //,toolbar : "right, slideshow, left, toc, zoomin, zoomout,  flipsound, fullscreen, thumbnails, download"
+                , thumbnailsPosition: 'left'
+                , responsiveHandleWidth: 50
+                // , container: window
+                , container: true
+
+                , containerHeight: window.innerHeight
+                , containerWidth: window.innerWidth
+                , containerPadding: "20px"
+                , displayToc: true
+                , toc: [                    // Оглавление книги и номер странице
+                    ["Главная", 0],
+                    ["От редакции", 1],
+                    ["Содержание", 3],
+                    ["Цифры", 5],
+                    ["Алмазы помогают", 21],
+                    ["Алмазы — лучшие друзья ученых", 33],
+                    ["Новое поколение", 37],
+                    ["Арт-проект", 47],
+                    ["Ювелирное путешествие", 61],
+                    ["Коллекция", 71]
+                ]
+
+            };
+
+            $('#book').wowBook(bookOptions);
+        })
+    </script>
+</body>
+
+</html>
